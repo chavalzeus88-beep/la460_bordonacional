@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrupación LA 460 - CCT 460 Salta | Conducción Alejandro Chauqui</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome CDN para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bordo: {
+                            DEFAULT: '#6B0D1E',
+                            dark: '#4A0814',
+                            light: '#8C1229',
+                            soft: '#9E1B32'
+                        },
+                        dorado: {
+                            DEFAULT: '#D4AF37',
+                            light: '#E2B041',
+                            dark: '#AA820A'
+                        },
+                        grisbg: '#F8F9FA'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-bordo selection:text-white">
+
+    <!-- Navigation / Header -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-11 h-11 bg-bordo rounded-xl flex items-center justify-center text-white font-black text-xl shadow-md border-2 border-dorado">
+                    460
+                </div>
+                <div>
+                    <span class="block text-xs font-bold tracking-widest text-bordo uppercase">Agrupación</span>
+                    <span class="text-lg font-black text-slate-900 leading-none tracking-tight">LA 460 <span class="text-xs font-semibold text-slate-500">| CCT 460 SALTA</span></span>
+                    <span class="block text-[11px] font-bold text-bordo mt-0.5"><i class="fa-solid fa-user-check text-dorado mr-1"></i>Conducción Alejandro Chauqui</span>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-2">
+                <a href="#propuestas" class="inline-flex items-center gap-1.5 bg-bordo text-white font-bold text-xs px-4 py-2.5 rounded-full transition-all hover:bg-bordo-dark shadow-sm">
+                    <i class="fa-solid fa-list-check text-dorado"></i>
+                    <span>Nuestras Propuestas</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative bg-gradient-to-b from-white via-slate-50 to-slate-100 pt-8 pb-12 overflow-hidden border-b border-slate-200">
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-bordo/5 rounded-full filter blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/2 -left-24 w-80 h-80 bg-dorado/10 rounded-full filter blur-2xl pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <!-- Badge Salta & Conducción -->
+            <div class="inline-flex flex-wrap items-center justify-center gap-2 bg-bordo/10 border border-bordo/20 px-3.5 py-1.5 rounded-full text-bordo font-bold text-xs uppercase tracking-wide mb-6">
+                <span><i class="fa-solid fa-location-dot text-dorado mr-1"></i> Provincia de Salta • CCT 460</span>
+                <span class="text-bordo font-black">•</span>
+                <span class="bg-bordo text-white px-2.5 py-0.5 rounded-full text-[11px] font-extrabold flex items-center gap-1 shadow-sm"><i class="fa-solid fa-user-check text-dorado"></i> Conducción Alejandro Chauqui</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-4 tracking-tight">
+                UN GREMIO QUE VUELVA A <span class="text-bordo underline decoration-dorado decoration-4 underline-offset-4">DEFENDER</span> A LOS TRABAJADORES
+            </h1>
+
+            <p class="text-slate-600 text-base sm:text-lg md:text-xl font-medium leading-relaxed max-w-2xl mx-auto mb-8">
+                Conocé nuestro proyecto para transformar el sindicato con una gestión transparente, cercana y presente para cada compañero del transporte salteño.
+            </p>
+
+            <!-- Call To Actions -->
+            <div class="flex flex-col sm:flex-row items-stretch justify-center gap-3.5 max-w-md mx-auto mb-10">
+                <a href="#propuestas" class="w-full bg-bordo hover:bg-bordo-dark text-white font-extrabold text-base px-6 py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all transform active:scale-95 flex items-center justify-center gap-2.5 border-b-4 border-bordo-dark">
+                    <i class="fa-solid fa-list-check text-dorado text-lg"></i>
+                    <span>Ver las 10 Propuestas</span>
+                </a>
+                <a href="#contacto" class="w-full bg-slate-800 hover:bg-slate-900 text-white font-bold text-base px-6 py-4 rounded-2xl shadow-md hover:shadow-lg transition-all transform active:scale-95 flex items-center justify-center gap-2">
+                    <span>💬 Queremos Escucharte</span>
+                </a>
+            </div>
+
+            <!-- Imagen Principal Hero - Colectivo Metalpar Salta -->
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white max-w-3xl mx-auto bg-slate-900">
+                <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&q=80" 
+                     alt="Colectivo urbano Metalpar Salta CCT 460" 
+                     class="w-full h-64 sm:h-80 md:h-96 object-cover opacity-90 hover:opacity-100 transition-opacity"
+                     onerror="this.src='https://placehold.co/1200x600/6B0D1E/FFFFFF?text=Colectivo+Metalpar+-+Transporte+de+Salta+CCT+460'">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-6 text-left">
+                    <div class="text-white">
+                        <span class="bg-dorado text-slate-900 font-extrabold text-xs px-2.5 py-1 rounded-md uppercase tracking-wider mb-1 inline-block">Colectivos Metalpar Salta</span>
+                        <p class="text-sm sm:text-base font-semibold text-slate-100">Compromiso, respeto y gestión real al servicio de la familia del transporte salteño.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: ¿POR QUÉ NACE LA AGRUPACIÓN LA 460? -->
+    <section class="py-12 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-10 card-shadow relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-2 h-full bg-bordo"></div>
+                
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-bordo/10 flex items-center justify-center text-bordo font-bold">
+                        <i class="fa-solid fa-bullhorn text-lg"></i>
+                    </div>
+                    <h2 class="text-xl sm:text-2xl font-black text-slate-900 uppercase tracking-tight">¿Por qué nace la Agrupación LA 460?</h2>
+                </div>
+
+                <p class="text-slate-700 text-base sm:text-lg font-medium leading-relaxed mb-6">
+                    "Creemos que un sindicato debe estar presente todos los días, defendiendo el salario, los derechos y la calidad de vida de cada trabajador y su familia."
+                </p>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4 border-t border-slate-200">
+                    <div class="text-center p-3 bg-white rounded-xl border border-slate-100">
+                        <i class="fa-solid fa-eye text-bordo text-xl mb-1"></i>
+                        <span class="block text-xs font-bold text-slate-800">Transparencia</span>
+                    </div>
+                    <div class="text-center p-3 bg-white rounded-xl border border-slate-100">
+                        <i class="fa-solid fa-handshake text-bordo text-xl mb-1"></i>
+                        <span class="block text-xs font-bold text-slate-800">Cercanía</span>
+                    </div>
+                    <div class="text-center p-3 bg-white rounded-xl border border-slate-100">
+                        <i class="fa-solid fa-shield-halved text-bordo text-xl mb-1"></i>
+                        <span class="block text-xs font-bold text-slate-800">Honestidad</span>
+                    </div>
+                    <div class="text-center p-3 bg-white rounded-xl border border-slate-100">
+                        <i class="fa-solid fa-briefcase text-bordo text-xl mb-1"></i>
+                        <span class="block text-xs font-bold text-slate-800">Profesionalismo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: NUESTRAS 10 PROPUESTAS -->
+    <section id="propuestas" class="py-12 bg-slate-100 border-b border-slate-200">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <span class="text-bordo font-extrabold text-xs uppercase tracking-widest bg-bordo/10 px-3 py-1 rounded-full">Proyecto de gestión CCT 460</span>
+                <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-2">NUESTROS 10 COMPROMISOS</h2>
+                <p class="text-slate-600 text-sm sm:text-base mt-2 max-w-xl mx-auto">Propuestas concretas y realistas pensadas para resolver las demandas diarias en los recorridos, puntas de línea y talleres.</p>
+            </div>
+
+            <!-- Grid de Tarjetas de Propuestas -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                <!-- Propuesta 1 -->
+                <div class="bg-white rounded-2xl p-5 border border-slate-200 card-shadow transition-all hover:border-bordo/40">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 shrink-0 bg-bordo text-white rounded-xl flex items-center justify-center font-bold text-xl shadow-md">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-black text-slate-900 text-lg leading-snug">1. Control total de tu sueldo</h3>
+                            <p class="text-slate-600 text-sm mt-1">Transparencia absoluta en liquidaciones, verificación de horas extra y adicionales para evitar errores en tus haberes.</p>
+                            
+                            <button onclick="toggleProposal('prop-1')" class="mt-3 text-bordo font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 hover:text-bordo-dark focus:outline-none">
+                                <span id="btn-text-prop-1">Ver más detalles</span>
+                                <i id="icon-prop-1" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+                            </button>
+
+                            <div id="prop-1" class="hidden mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 leading-relaxed bg-slate-50 p-3 rounded-lg">
+                                Disponibilizaremos un equipo técnico contable permanente y herramientas para verificar si la empresa liquidó correctamente el básico, antigüedad, horas nocturnas y feriados.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Propuesta 2 -->
+                <div class="bg-white rounded-2xl p-5 border border-slate-200 card-shadow transition-all hover:border-bordo/40">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 shrink-0 bg-bordo text-white rounded-xl flex items-center justify-center font-bold text-xl shadow-md">
+                            <i class="fa-solid fa-wrench"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-black text-slate-900 text-lg leading-snug">2. Derechos para el personal de taller</h3>
+                            <p class="text-slate-600 text-sm mt-1">Garantía de herramientas de calidad, indumentaria adecuada en tiempo y forma, y mejoras en la seguridad e higiene.</p>
+                            
+                            <button onclick="toggleProposal('prop-2')" class="mt-3 text-bordo font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 hover:text-bordo-dark">
+                                <span id="btn-text-prop-2">Ver más detalles</span>
+                                <i id="icon-prop-2" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+                            </button>
+
+                            <div id="prop-2" class="hidden mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 leading-relaxed bg-slate-50 p-3 rounded-lg">
+                                Equipamiento de protección personal (EPP) homologado entregado puntualmente. Categorizaciones justas por especialidad técnica y capacitaciones constantes para la actualización en mantenimiento de unidades.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Propuesta 3 -->
+                <div class="bg-white rounded-2xl p-5 border border-slate-200 card-shadow transition-all hover:border-bordo/40">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 shrink-0 bg-bordo text-white rounded-xl flex items-center justify-center font-bold text-xl shadow-md">
+                            <i class="fa-solid fa-people-roof"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-black text-slate-900 text-lg leading-snug">3. Más beneficios para tu grupo familiar</h3>
+                            <p class="text-slate-600 text-sm mt-1">Kits escolares gratuitos completos, festejos del día del niño, guarderías y respaldo para emergencias del hogar.</p>
+                            
+                            <button onclick="toggleProposal('prop-3')" class="mt-3 text-bordo font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 hover:text-bordo-dark">
+                                <span id="btn-text-prop-3">Ver más detalles</span>
+                                <i id="icon-prop-3" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+                            </button>
+
+                            <div id="prop-3" class="hidden mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 leading-relaxed bg-slate-50 p-3 rounded-lg">
+                                Ampliación de la cobertura de subsidios por nacimiento, matrimonio y fallecimiento. Acompañamiento económico e institucional directo a la familia del trabajador.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Propuesta 4 -->
+                <div class="bg-white rounded-2xl p-5 border border-slate-200 card-shadow transition-all hover:border-bordo/40">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 shrink-0 bg-bordo text-white rounded-xl flex items-center justify-center font-bold text-xl shadow-md">
+                            <i class="fa-solid fa-ear-listen"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-black text-slate-900 text-lg leading-snug">4. Oído social activo</h3>
+                            <p class="text-slate-600 text-sm mt-1">Presencia permanente de delegados en cabeceras y puntas de línea. Atención 24/7 sin trámites burocráticos.</p>
+                            
+                            <button onclick="toggleProposal('prop-4')" class="mt-3 text-bordo font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 hover:text-bordo-dark">
+                                <span id="btn-text-prop-4">Ver más detalles</span>
+                                <i id="icon-prop-4" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+                            </button>
+
+                            <div id="prop-4" class="hidden mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 leading-relaxed bg-slate-50 p-3 rounded-lg">
+                                Recorridas semanales programadas del cuerpo gremial para escuchar reclamos de infraestructura en descansos, frecuencias y tiempos de vuelta en tiempo real.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Propuesta 5 -->
+                <div class="bg-white rounded-2xl p-5 border border-slate-200 card-shadow transition-all hover:border-bordo/40">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 shrink-0 bg-bordo text-white rounded-xl flex items-center justify-center font-bold text-xl shadow-md">
+                            <i class="fa-solid fa-gavel"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-black text-slate-900 text-lg leading-snug">5. Secretaría de Defensa de Derechos</h3>
+                            <p class="text-slate-600 text-sm mt-1">Asesoría jurídica y gremial gratuita e inmediata ante sanciones, cartas documento o arbitrariedades empresariales.</p>
+                            
+                            <button onclick="toggleProposal('prop-5')" class="mt-3 text-bordo font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 hover:text-bordo-dark">
+                                <span id="btn-text-prop-5">Ver más detalles</span>
+                                <i id="icon-prop-5" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+                            </button>
+
+                            <div id="prop-5" class="hidden mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 leading-relaxed bg-slate-50 p-3 rounded-lg">
+                                Equipo de abogadas y abogados laboralistas especializados exclusivamente en el Convenio Colectivo CCT 460 para proteger de manera real e imparcial al trabajador.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Propuesta 6 -->
+                <div class="bg-white rounded-2xl p-5 border border-slate-200 card-shadow transition-all hover:border-bordo/40">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 shrink-0 bg-bordo text-white rounded-xl flex items-center justify-center font-bold text-xl shadow-md">
+                            <i class="fa-solid fa-percent"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-black text-slate-900 text-lg leading-snug">6. Gestión del adicional del 18%</h3>
+                            <p class="text-slate-600 text-sm mt-1">Firmeza y seguimiento administrativo constante para asegurar el cobro efectivo y regularización del 18% adicional.</p>
+                            
+                            <button onclick="toggleProposal('prop-6')" class="mt-3 text-bordo font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 hover:text-bordo-dark">
+                                <span id="btn-text-prop-6">Ver más detalles</span>
+                                <i id="icon-prop-6" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+                            </button>
+
+                            <div id="prop-6" class="hidden mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 leading-relaxed bg-slate-50 p-3 rounded-lg">
+                                Apertura de mesas paritarias permanentes para el monitoreo estricto de este diferencial, evitando dilaciones o malas interpretaciones normativas.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Propuesta 7 -->
+                <div class="bg-white rounded-2xl p-5 border border-slate-200 card-shadow transition-all hover:border-bordo/40">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 shrink-0 bg-bordo text-white rounded-xl flex items-center justify-center font-bold text-xl shadow-md">
+                            <i class="fa-solid fa-user-gear"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-black text-slate-900 text-lg leading-snug">7. Secretaría de Adultos y Jubilados</h3>
+                            <p class="text-slate-600 text-sm mt-1">Acompañamiento en el trámite previsional, asesoría jurídica previa y continuidad de beneficios en la etapa pasiva.</p>
+                            
+                            <button onclick="toggleProposal('prop-7')" class="mt-3 text-bordo font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 hover:text-bordo-dark">
+                                <span id="btn-text-prop-7">Ver más detalles</span>
+                                <i id="icon-prop-7" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+                            </button>
+
+                            <div id="prop-7" class="hidden mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 leading-relaxed bg-slate-50 p-3 rounded-lg">
+                                Ningún compañero quedará solo. Crearemos la subsede de acompañamiento para trámites de ANSES y mantendremos las prestaciones recreativas.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Propuesta 8 -->
+                <div class="bg-white rounded-2xl p-5 border border-slate-200 card-shadow transition-all hover:border-bordo/40">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 shrink-0 bg-bordo text-white rounded-xl flex items-center justify-center font-bold text-xl shadow-md">
+                            <i class="fa-solid fa-umbrella-beach"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-black text-slate-900 text-lg leading-snug">8. Turismo, Vivienda y Deporte</h3>
+                            <p class="text-slate-600 text-sm mt-1">Nuevos convenios hoteleros accesibles, gestión de cooperativas de vivienda y torneos deportivos interempresas.</p>
+                            
+                            <button onclick="toggleProposal('prop-8')" class="mt-3 text-bordo font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 hover:text-bordo-dark">
+                                <span id="btn-text-prop-8">Ver más detalles</span>
+                                <i id="icon-prop-8" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+                            </button>
+
+                            <div id="prop-8" class="hidden mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 leading-relaxed bg-slate-50 p-3 rounded-lg">
+                                Impulso a proyectos habitacionales para la familia del transporte y fomento del deporte con ligas de fútbol y actividades recreativas.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Propuesta 9 -->
+                <div class="bg-white rounded-2xl p-5 border border-slate-200 card-shadow transition-all hover:border-bordo/40">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 shrink-0 bg-bordo text-white rounded-xl flex items-center justify-center font-bold text-xl shadow-md">
+                            <i class="fa-solid fa-hand-holding-heart"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-black text-slate-900 text-lg leading-snug">9. Acción Social Directa</h3>
+                            <p class="text-slate-600 text-sm mt-1">Convenios de descuentos en farmacias, ópticas y comercios salteños para cuidar la economía familiar.</p>
+                            
+                            <button onclick="toggleProposal('prop-9')" class="mt-3 text-bordo font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 hover:text-bordo-dark">
+                                <span id="btn-text-prop-9">Ver más detalles</span>
+                                <i id="icon-prop-9" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+                            </button>
+
+                            <div id="prop-9" class="hidden mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 leading-relaxed bg-slate-50 p-3 rounded-lg">
+                                Red de comercios adheridos en toda la provincia con beneficio directo con la sola presentación del carnet de afiliado.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Propuesta 10 -->
+                <div class="bg-white rounded-2xl p-5 border border-slate-200 card-shadow transition-all hover:border-bordo/40">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 shrink-0 bg-bordo text-white rounded-xl flex items-center justify-center font-bold text-xl shadow-md">
+                            <i class="fa-solid fa-bus"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-black text-slate-900 text-lg leading-snug">10. Vehículo propio para turismo</h3>
+                            <p class="text-slate-600 text-sm mt-1">Adquisición de unidades de transporte propias del gremio dedicadas exclusivamente al traslado recreativo del afiliado.</p>
+                            
+                            <button onclick="toggleProposal('prop-10')" class="mt-3 text-bordo font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 hover:text-bordo-dark">
+                                <span id="btn-text-prop-10">Ver más detalles</span>
+                                <i id="icon-prop-10" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+                            </button>
+
+                            <div id="prop-10" class="hidden mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 leading-relaxed bg-slate-50 p-3 rounded-lg">
+                                Unidades modernas operadas por la misma institución para realizar viajes turísticos, salidas de delegaciones deportivas y traslados comunitarios.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: PREGUNTAS FRECUENTES -->
+    <section class="py-12 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl sm:text-3xl font-black text-slate-900">PREGUNTAS FRECUENTES</h2>
+                <p class="text-slate-600 text-sm mt-1">Respuestas transparentes a las dudas más habituales.</p>
+            </div>
+
+            <div class="space-y-3">
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden card-shadow">
+                    <button onclick="toggleFaq('faq-1')" class="w-full p-5 text-left font-bold text-slate-900 text-base flex justify-between items-center hover:bg-slate-50 transition-colors">
+                        <span>¿Qué propone LA 460?</span>
+                        <i id="faq-icon-1" class="fa-solid fa-plus text-bordo transition-transform"></i>
+                    </button>
+                    <div id="faq-1" class="hidden px-5 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                        Proponemos una gestión sindical transparente, moderna y de puertas abiertas. Queremos devolverle el sindicato a los choferes y trabajadores de taller mediante un control estricto de liquidaciones de sueldo, presencia en las empresas y mayores beneficios para toda la familia del transporte.
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden card-shadow">
+                    <button onclick="toggleFaq('faq-2')" class="w-full p-5 text-left font-bold text-slate-900 text-base flex justify-between items-center hover:bg-slate-50 transition-colors">
+                        <span>¿Cómo puedo participar?</span>
+                        <i id="faq-icon-2" class="fa-solid fa-plus text-bordo transition-transform"></i>
+                    </button>
+                    <div id="faq-2" class="hidden px-5 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                        Podés dejarnos tus datos en nuestro formulario de contacto más abajo o participar en las reuniones de cabecera y recorridas de línea que organizamos periódicamente.
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden card-shadow">
+                    <button onclick="toggleFaq('faq-3')" class="w-full p-5 text-left font-bold text-slate-900 text-base flex justify-between items-center hover:bg-slate-50 transition-colors">
+                        <span>¿Quiénes integran la agrupación?</span>
+                        <i id="faq-icon-3" class="fa-solid fa-plus text-bordo transition-transform"></i>
+                    </button>
+                    <div id="faq-3" class="hidden px-5 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                        Somos choferes, inspectores, lavadores, administrativos y personal de taller activos de las distintas líneas del transporte salteño, bajo la conducción de Alejandro Chauqui.
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden card-shadow">
+                    <button onclick="toggleFaq('faq-4')" class="w-full p-5 text-left font-bold text-slate-900 text-base flex justify-between items-center hover:bg-slate-50 transition-colors">
+                        <span>¿Cómo puedo acercar una propuesta?</span>
+                        <i id="faq-icon-4" class="fa-solid fa-plus text-bordo transition-transform"></i>
+                    </button>
+                    <div id="faq-4" class="hidden px-5 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                        Completando el formulario de esta página o conversando directamente con nuestros referentes en las puntas de línea y talleres. Todas las ideas son sumadas a nuestro plan de gestión.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: QUEREMOS ESCUCHARTE (FORMULARIO) -->
+    <section id="contacto" class="py-12 bg-white">
+        <div class="max-w-3xl mx-auto px-4">
+            
+            <!-- Beneficio concreto al registrarse -->
+            <div class="bg-gradient-to-r from-bordo to-bordo-dark rounded-3xl p-6 text-white card-shadow mb-8 border border-dorado/30">
+                <div class="flex items-center gap-3 mb-2">
+                    <i class="fa-solid fa-bullhorn text-dorado text-2xl"></i>
+                    <h3 class="font-extrabold text-lg sm:text-xl">Sumate y mantenete informado</h3>
+                </div>
+                <p class="text-xs sm:text-sm text-slate-200 mb-3">
+                    Al dejarnos tu mensaje te mantenés directamente conectado con la campaña y recibís:
+                </p>
+                <ul class="text-xs sm:text-sm space-y-1.5 text-slate-100 font-medium">
+                    <li><i class="fa-solid fa-check text-dorado mr-2"></i>Las 10 propuestas detalladas completas.</li>
+                    <li><i class="fa-solid fa-check text-dorado mr-2"></i>Fechas y lugares de reuniones e informativas.</li>
+                    <li><i class="fa-solid fa-check text-dorado mr-2"></i>Canal directo para hacer consultas y aportar ideas.</li>
+                </ul>
+            </div>
+
+            <!-- Formulario de Contacto -->
+            <div class="bg-slate-50 rounded-3xl p-6 sm:p-8 border border-slate-200 card-shadow">
+                <div class="text-center mb-6">
+                    <h2 class="text-2xl font-black text-slate-900 uppercase">QUEREMOS ESCUCHARTE</h2>
+                    <p class="text-slate-600 text-sm mt-1">Tu opinión es fundamental para seguir mejorando el gremio.</p>
+                </div>
+
+                <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nombre *</label>
+                            <input type="text" required placeholder="Tu nombre" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-bordo focus:outline-none bg-white">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Apellido *</label>
+                            <input type="text" required placeholder="Tu apellido" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-bordo focus:outline-none bg-white">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Rol en la empresa *</label>
+                            <select required class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-bordo focus:outline-none bg-white text-slate-700">
+                                <option value="" disabled selected>Seleccioná tu rol</option>
+                                <option value="Chofer">Chofer</option>
+                                <option value="Lavadero">Lavadero</option>
+                                <option value="Inspector">Inspector</option>
+                                <option value="Administrativo">Administrativo</option>
+                                <option value="Mecánico / Taller">Mecánico / Taller</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Empresa donde trabajás <span class="text-slate-400 font-normal">(Opcional)</span></label>
+                            <input type="text" placeholder="Nombre de la empresa" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-bordo focus:outline-none bg-white">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Teléfono / WhatsApp *</label>
+                            <input type="tel" required placeholder="Ej: 387 1234567" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-bordo focus:outline-none bg-white">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">¿Qué tema te preocupa más? *</label>
+                            <select required class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-bordo focus:outline-none bg-white text-slate-700">
+                                <option value="" disabled selected>Seleccioná un tema</option>
+                                <option value="Sueldos">Sueldos</option>
+                                <option value="Horas extras">Horas extras</option>
+                                <option value="Insalubridad">Insalubridad</option>
+                                <option value="Salud / Obra Social">Salud / Obra Social</option>
+                                <option value="Turismo">Turismo</option>
+                                <option value="Jubilación">Jubilación</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Mensaje o Sugerencia</label>
+                        <textarea rows="3" placeholder="Escribí aquí tu comentario o propuesta..." class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-bordo focus:outline-none bg-white"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-bordo hover:bg-bordo-dark text-white font-extrabold text-base py-4 rounded-xl shadow-lg transition-all border-b-4 border-bordo-dark flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-paper-plane text-dorado"></i>
+                        <span>Enviar mensaje</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="bg-slate-900 text-white py-10 border-t-4 border-dorado">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            
+            <div class="w-14 h-14 bg-bordo rounded-2xl flex items-center justify-center text-white font-black text-2xl mx-auto mb-3 shadow-md border-2 border-dorado">
+                460
+            </div>
+
+            <h3 class="text-2xl font-black tracking-tight uppercase">AGRUPACIÓN LA 460</h3>
+            <p class="text-dorado font-extrabold text-sm uppercase tracking-widest mt-1">
+                <i class="fa-solid fa-user-check mr-1"></i> CONDUCCIÓN ALEJANDRO CHAUQUI
+            </p>
+            <p class="text-slate-400 text-xs mt-1">Provincia de Salta • CCT 460</p>
+            
+            <p class="italic text-slate-300 font-medium text-sm my-4">"Unidos construimos más derechos."</p>
+
+            <div class="border-t border-slate-800 pt-6 mt-6 max-w-xl mx-auto">
+                <p class="text-[11px] text-slate-400 leading-relaxed">
+                    <i class="fa-solid fa-shield text-slate-500 mr-1"></i>
+                    <strong>Aviso de Privacidad:</strong> Sus datos personales se utilizarán únicamente para mantener informados a los trabajadores sobre las actividades, propuestas y novedades de la agrupación.
+                </p>
+                
+                <p class="text-xs text-slate-500 mt-4">
+                    © 2026 Agrupación LA 460 - Conducción Alejandro Chauqui. Salta, Argentina.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL DE CONFIRMACIÓN DE ENVÍO DEL FORMULARIO -->
+    <div id="successModal" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-sm w-full text-center shadow-2xl border-2 border-bordo">
+            <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 class="text-xl font-extrabold text-slate-900 mb-2">¡Mensaje Recibido!</h3>
+            <p class="text-sm text-slate-600 mb-6">Gracias por comunicarte con la Agrupación LA 460. Tu mensaje fue guardado correctamente.</p>
+            <button onclick="closeModal()" class="w-full bg-bordo hover:bg-bordo-dark text-white font-bold py-3 rounded-xl transition-all">
+                Aceptar
+            </button>
+        </div>
+    </div>
+
+    <!-- SCRIPTS DE INTERACCIÓN -->
+    <script>
+        // Desplegar / Ocultar Tarjetas de Propuestas
+        function toggleProposal(id) {
+            const el = document.getElementById(id);
+            const icon = document.getElementById('icon-' + id);
+            const btnText = document.getElementById('btn-text-' + id);
+
+            if (el.classList.contains('hidden')) {
+                el.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+                if (btnText) btnText.innerText = 'Ocultar detalles';
+            } else {
+                el.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+                if (btnText) btnText.innerText = 'Ver más detalles';
+            }
+        }
+
+        // Desplegar / Ocultar Preguntas Frecuentes (FAQ)
+        function toggleFaq(id) {
+            const el = document.getElementById(id);
+            const icon = document.getElementById('faq-icon-' + id);
+
+            if (el.classList.contains('hidden')) {
+                el.classList.remove('hidden');
+                icon.className = 'fa-solid fa-minus text-bordo transition-transform';
+            } else {
+                el.classList.add('hidden');
+                icon.className = 'fa-solid fa-plus text-bordo transition-transform';
+            }
+        }
+
+        // Manejo del envío del Formulario de Contacto
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            document.getElementById('successModal').classList.remove('hidden');
+            document.getElementById('contactForm').reset();
+        }
+
+        // Cerrar Modal
+        function closeModal() {
+            document.getElementById('successModal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
