@@ -623,9 +623,30 @@
             document.getElementById('contactForm').reset();
         }
 
-        // Cerrar Modal
-        function closeModal() {
-            document.getElementById('successModal').classList.add('hidden');
+       function handleSubmit(e) {
+  e.preventDefault();
+
+  const data = new FormData(e.target);
+
+  fetch(
+    'https://script.google.com/macros/s/AKfycbzhlrxtfp4r4vAVuvOMvAnP_K9leF8vA8IJh5A4Im3yMmBUiB84DOjnZHBtX7bt8pYs/exec',
+    {
+      method: 'POST',
+      body: data,
+    }
+  )
+    .then(response => {
+      if (response.ok) {
+        document.getElementById('successModal').classList.remove('hidden');
+        document.getElementById('ContactForm').reset();
+      } else {
+        console.error('Error al enviar el formulario');
+      }
+    })
+    .catch(error => {
+      console.error('Error de conexión:', error);
+    });
+}
         }
     </script>
 </body>
