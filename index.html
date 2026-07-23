@@ -563,46 +563,46 @@
                 return;
             }
 
-            // Deshabilitar botón y mostrar spinner
+            // Cambiar el estado del botón mientras envía
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin text-dorado"></i><span>Enviando...</span>';
             submitBtn.disabled = true;
-            submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin text-dorado"></i> Enviando...`;
 
+            // Recolectar datos del formulario
             const datos = {
-                nombre: form.nombre.value.trim(),
-                apellido: form.apellido.value.trim(),
+                nombre: form.nombre.value,
+                apellido: form.apellido.value,
                 rol: form.rol.value,
-                empresa: form.empresa.value.trim(),
-                telefono: telefono,
+                empresa: form.empresa.value,
+                telefono: form.telefono.value,
                 tema: form.tema.value,
-                mensaje: form.mensaje.value.trim()
+                mensaje: form.mensaje.value
             };
 
             try {
-                const respuesta = await fetch(SCRIPT_URL, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
+                // Enviar datos usando fetch con la solución text/plain
+                await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors', // Evita el bloqueo de CORS
+                    headers: {
+                        'Content-Type': 'text/plain;charset=utf-8', // CAMBIO CLAVE
+                    },
                     body: JSON.stringify(datos)
                 });
-                const json = await respuesta.json();
-                if (json.status === "success") {
-                    document.getElementById("successModal").classList.remove("hidden");
-                    form.reset();
-                } else {
-                    alert("Hubo un error al guardar el formulario. Por favor, intentá nuevamente.");
-                }
-            } catch (error) {
-                alert("Error de conexión. Verificá tu internet y volvé a intentar.");
-            } finally {
+
                 // Restaurar botón
-                submitBtn.disabled = false;
                 submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                
+                // Mostrar modal de éxito
+                document.getElementById('successModal').classList.remove('hidden');
+                form.reset();
+
+            } catch (error) {
+                console.error('Error al enviar:', error);
+                alert('Hubo un error de conexión. Verifica tu internet y vuelve a intentar.');
+                
+                // Restaurar botón en caso de error
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
             }
         }
-
-        // Cerrar Modal
-        function closeModal() {
-            document.getElementById('successModal').classList.add('hidden');
-        }
-    </script>
-</body>
-</html>
