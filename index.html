@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html class="scroll-smooth" lang="es">
 <head>
 <meta charset="utf-8"/>
@@ -516,6 +515,9 @@
 </div>
 <!-- SCRIPTS DE INTERACCIÓN -->
 <script>
+        // --- CONFIGURACIÓN: URL del script de Google Apps Script ---
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzkaEywyip4G-U-NHxFakjPNwcPzmtZw0gWjAQRPNGCWoL-0_-2jb6YOOJFfsPAlz4q/exec";
+
         // Desplegar / Ocultar Tarjetas de Propuestas
         function toggleProposal(id) {
             const el = document.getElementById(id);
@@ -547,35 +549,57 @@
             }
         }
 
-        // Manejo del envío del Formulario de Contacto
-        const SCRIPT_URL =
-"https://script.google.com/macros/s/AKfycbzkaEywyip4G-U-NHxFakjPNwcPzmtZw0gWjAQRPNGCWoL-0_-2jb6YOOJFfsPAlz4q/exec";
+        // Manejo del envío del Formulario de Contacto (optimizado)
+        async function handleFormSubmit(e) {
+            e.preventDefault();
+            const form = e.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
 
-async function handleFormSubmit(e){
+            // Validación extra: teléfono solo números
+            const telefono = form.telefono.value.trim();
+            if (!/^\d+$/.test(telefono)) {
+                alert('El teléfono debe contener solo números (sin espacios ni guiones).');
+                return;
+            }
 
-    e.preventDefault();
+            // Deshabilitar botón y mostrar spinner
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin text-dorado"></i> Enviando...`;
 
-    const form=e.target;
+            const datos = {
+                nombre: form.nombre.value.trim(),
+                apellido: form.apellido.value.trim(),
+                rol: form.rol.value,
+                empresa: form.empresa.value.trim(),
+                telefono: telefono,
+                tema: form.tema.value,
+                mensaje: form.mensaje.value.trim()
+            };
 
-    const datos={
-        nombre:form.nombre.value,
-        apellido:form.apellido.value,
-        rol:form.rol.value,
-        empresa:form.empresa.value,
-        telefono:form.telefono.value,
-        tema:form.tema.value,
-        mensaje:form.mensaje.value
-    };
+            try {
+                const respuesta = await fetch(SCRIPT_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(datos)
+                });
+                const json = await respuesta.json();
+                if (json.status === "success") {
+                    document.getElementById("successModal").classList.remove("hidden");
+                    form.reset();
+                } else {
+                    alert("Hubo un error al guardar el formulario. Por favor, intentá nuevamente.");
+                }
+            } catch (error) {
+                alert("Error de conexión. Verificá tu internet y volvé a intentar.");
+            } finally {
+                // Restaurar botón
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalText;
+            }
+        }
 
-    try{
-        const respuesta=await fetch(SCRIPT_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(datos)});
-        const json=await respuesta.json();
-        if(json.status==="success"){document.getElementById("successModal").classList.remove("hidden");form.reset();}else{alert("No se pudo guardar el formulario.");}
-    }catch(error){alert("Error de conexión.");}
-
-}
-
-// Cerrar Modal
+        // Cerrar Modal
         function closeModal() {
             document.getElementById('successModal').classList.add('hidden');
         }
