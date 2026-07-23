@@ -617,36 +617,23 @@
         }
 
         // Manejo del envío del Formulario de Contacto
-        function handleFormSubmit(e) {
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzKm0g5BVX3UEczxwoVxTxcsHoDcI_KZ3nAfWb-KGh0_Vtfl2rEixFeHi3MyRINqATa/exec";
+        async function handleFormSubmit(e) {
             e.preventDefault();
-            document.getElementById('successModal').classList.remove('hidden');
-            document.getElementById('contactForm').reset();
+            const form=e.target;
+            const fd=new FormData(form);
+            try {
+              await fetch(SCRIPT_URL,{method:'POST',body:fd});
+              document.getElementById('successModal').classList.remove('hidden');
+              form.reset();
+            } catch(err) {
+              alert('Error al enviar el formulario.');
+            }
         }
 
-       function handleSubmit(e) {
-  e.preventDefault();
-
-  const data = new FormData(e.target);
-
-  fetch(
-    'https://script.google.com/macros/s/AKfycbzhlrxtfp4r4vAVuvOMvAnP_K9leF8vA8IJh5A4Im3yMmBUiB84DOjnZHBtX7bt8pYs/exec',
-    {
-      method: 'POST',
-      body: data,
-    }
-  )
-    .then(response => {
-      if (response.ok) {
-        document.getElementById('successModal').classList.remove('hidden');
-        document.getElementById('ContactForm').reset();
-      } else {
-        console.error('Error al enviar el formulario');
-      }
-    })
-    .catch(error => {
-      console.error('Error de conexión:', error);
-    });
-}
+        // Cerrar Modal
+        function closeModal() {
+            document.getElementById('successModal').classList.add('hidden');
         }
     </script>
 </body>
